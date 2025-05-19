@@ -1,0 +1,38 @@
+.btn-menu {
+  background-color: #00274C;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.ford-menu-header {
+  background-color: #00274C;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-menu-item {
+  text-align: left;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-menu-item:hover {
+  background-color: #e9ecef;
+}
+
+.logout-item {
+  color: #dc3545;
+}
+
+.logout-item:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.logoford {
+  max-height: 40px; 
+  width: auto; 
+  margin-right: 10px; 
+}

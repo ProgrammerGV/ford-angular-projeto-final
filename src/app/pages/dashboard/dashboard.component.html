@@ -1,0 +1,35 @@
+<div style="display: flex; height: 50px; background-color: rgb(231, 231, 231); padding: 10px; align-items: center; gap: 10px; justify-content: space-between; border-bottom: solid 1px #00000036;">
+<app-menu />
+<button (click)="logout()" class="btn btn-danger">Logout <i class="bi bi-box-arrow-right"></i></button>
+</div>
+
+<section class="cardsMenu">
+
+    <div class="shadow border border-black p-3">
+    <h2>Veículos</h2>
+    <select style="width: 100%;" (change)="onChangeSelect($event)">
+        @for (v of veiculos; track v.id) {
+            <option value="{{ v.id }}">{{ v.vehicle }}</option>
+        }
+    </select>
+    </div>
+
+    <app-card [titulo]="'Total de Vendas'" [valor]="veiculoSelecionado.volumetotal" />
+    <app-card [titulo]="'Conectados'" [valor]="veiculoSelecionado.connected"/>
+    <app-card [titulo]="'Upd. Software'" [valor]="veiculoSelecionado.softwareUpdates"/>
+</section>
+
+
+<section style="display: flex; align-items: center; justify-content: center; padding: 40px;" >
+    <img class="selectedVehicle" src="{{ veiculoSelecionado.img }}" alt="">
+</section>
+<section style="display: flex; justify-content: center;">
+    <app-car-table
+        [vin]="veiculoSelecionado.vin"
+        [lat]="vinInfos.lat"
+        [long]="vinInfos.long"
+        [nivelCombustivel]="vinInfos.nivelCombustivel"
+        [odometro]="vinInfos.odometro"
+        [status]="vinInfos.status"
+    />
+</section>

@@ -1,0 +1,11 @@
+.border-black{
+    width: 270px;
+    border: solid 1px;
+    box-shadow: 4px 4px 4px 2px;
+    border-radius: 10px;
+    
+}
+
+p{
+    text-align: center;
+}

@@ -1,0 +1,40 @@
+<div class="geral">
+    <div class="paginaesquerda">
+        <div class="imagemcarro">
+            <img class= "ranger" src="img/ranger.png" alt="Imagem de Carro da Ford (Ranger)">
+        </div>
+    </div>
+
+    <div class="paginadireita">
+        <div class="logobox">
+            <img class="logoford" src="img/ford.png" alt="Logo Ford">
+        </div>
+            <div class="caixadetexto">
+                <h2 class="footer">
+                    footer
+                </h2>
+            </div>
+            <div class="caixalogin">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+
+                    <div class="form-group">
+                        <label for="username"></label>
+                        <i class="bi bi-person-circle"></i>
+                        <input formControlName="nome" required type="text" class="form-control" id="username" placeholder="Escreva seu usuario">
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"></label>
+                        <i class="bi bi-lock"></i>
+                        <input required formControlName="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Escreva sua senha">
+                    </div>
+
+                    <div class="d-grid gap-2 col-6 mx-auto w-100">
+                        <button type="Login" class="btn btn-primary w-100">Login</button>
+                    </div>
+
+                </form>
+            </div>
+    </div>
+</div>

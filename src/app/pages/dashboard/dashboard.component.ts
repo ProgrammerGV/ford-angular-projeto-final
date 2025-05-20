@@ -4,11 +4,10 @@ import { CarTableComponent } from "../../component/car-table/car-table.component
 import { DashboardService } from '../../services/dashboard.service';
 import { Veiculo, VinInfos } from '../../models/car';
 import { Router } from '@angular/router';
-import { MenuComponent } from '../../components/menu/menu.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CardComponent, CarTableComponent, MenuComponent],
+  imports: [CardComponent, CarTableComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

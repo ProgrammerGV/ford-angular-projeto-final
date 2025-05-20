@@ -4,41 +4,51 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [ CommonModule],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  router = inject(Router)
+  router = inject(Router);
 
   logout() {
-    sessionStorage.clear()
-    this.router.navigate([""])
+    sessionStorage.clear();
+    this.router.navigate([""]);
   }
 
   slides: any[] = [
     {
-      image: 'img/imagem_1.jpg',
+      image: 'assets/fordranger2.webp',
       alt: 'Slide 1',
-      title: 'Primeiro Slide',
-      description: 'Descrição do primeiro slide'
+      title: 'Ford Ranger',
+      description: 'Esta é a nova Ranger Ford 2022. Verifique novidades.',
+      link: '/lancamentos'
     },
     {
-      image: 'img/imagem_2.jpg',
+      image: 'assets/imagem_2.jpg',
       alt: 'Slide 2',
-      title: 'Segundo Slide',
-      description: 'Descrição do segundo slide'
+      title: 'Ford, a nossa história.',
+      description: 'Conheça a nossa origem.',
+      link: '/contato' 
     },
     {
-      image: 'img/imagem_3.jpg',
+      image: 'assets/bronco.jpg',
       alt: 'Slide 3',
-      title: 'Terceiro Slide',
-      description: 'Descrição do terceiro slide'
+      title: 'Ford Bronco',
+      description: 'Nova Ford Bronco Sport 2022',
+      link: '/lancamentos' 
     }
   ];
 
   currentIndex: number = 0;
   private interval: any;
+
+  onSlideClick(index: number): void {
+    const slide = this.slides[index];
+    if (slide.link) {
+      this.router.navigate([slide.link]);
+    }
+  }
 
   ngOnInit(): void {
     this.startAutoPlay();
@@ -74,7 +84,3 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.startAutoPlay();
   }
 }
-
-
-
-

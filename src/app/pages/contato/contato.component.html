@@ -1,0 +1,62 @@
+<main>
+    <div class="image-wrapper">
+      <img src="assets/mustangford.jpg" alt="Mustang" class="background-car" />
+    </div>
+
+  <div class="container">
+    <div *ngIf="showPopup" class="popup-overlay">
+      <div class="popup-content">
+        <span class="popup-icon">✓</span>
+        <h2>Mensagem enviada!</h2>
+        <p>{{ popupMessage }}</p>
+        <button (click)="fecharPopup()">Fechar</button>
+      </div>
+    </div>
+    
+    
+    <form [formGroup]="contactForm" (ngSubmit)="enviar()" class="formulario">
+      <label for="name">NOME</label>
+      <input type="text" id="name" formControlName="nome" placeholder="Nome completo">
+      
+      <label for="e-mail">E-MAIL</label>
+      <input type="email" id="e-mail" formControlName="email" placeholder="E-mail">
+      
+      <label for="telefone">TELEFONE</label>
+      <input type="text" id="telefone" formControlName="telefone" 
+      (input)="formatarTelefone($event)" placeholder="Número para contato" maxlength="15">
+      
+      <label for="tipodecontato">Tipo de contato</label>
+      <select id="tipodecontato" formControlName="tipoContato">
+        <option value="elogio">Elogio</option>
+        <option value="reclamacao">Reclamação</option>
+        <option value="solicitacao">Solicitação</option>
+      </select>
+      
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" formControlName="mensagem" placeholder="Escreva aqui sua mensagem..."></textarea>
+      
+      <div class="termosdeuso">
+        Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A
+        qualquer momento, será possível editar ou remover tais dados. 
+        <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank">Termos e condições</a>
+      </div>
+      
+      <div class="divcheckbox">
+        <div class="divcheckbox-item">
+          <input type="checkbox" id="checkbox1" formControlName="termosAceitos">
+          <span class="span1" (click)="toggleCheckbox('termosAceitos')">
+            Sim. Li e concordo com os Termos e Condições.
+          </span>
+        </div>
+        <div class="divcheckbox-item">
+          <input type="checkbox" id="checkbox2" formControlName="receberNovidades">
+          <span class="span2" (click)="toggleCheckbox('receberNovidades')">
+            Sim. Também quero receber descontos e novidades.
+          </span>
+        </div>
+      </div>
+      
+      <button type="submit" [disabled]="!contactForm.valid" [class.disabled-button]="contactForm.invalid">Enviar</button>
+    </form>
+  </div>
+</main>

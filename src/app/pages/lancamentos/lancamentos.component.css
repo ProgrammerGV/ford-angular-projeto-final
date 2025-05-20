@@ -1,0 +1,271 @@
+.video-lancamento {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.paragrafo-imagem {
+    max-width: 80%;
+    margin: 2rem auto;  
+    text-align: center;
+    font-size: 0.8rem;
+    border-style: solid ;
+    border-radius: 25px;
+    border-color: rgba(128, 128, 128, 0.243);
+    border-width: 1px;
+    padding: 10px;
+}
+
+.cards-carro {
+    width: 50%; 
+    table-layout: fixed; 
+    border-spacing: 20px; 
+}
+
+.cards-carro td {
+    width: 33.33%; 
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.cards-carro-imagem {
+    width: 100%;
+    height: auto; 
+    border-radius: 10px;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;    
+    gap: 10px; 
+}
+
+.card-info p {
+    margin: 5px 0; 
+    text-align: center;
+}
+
+.card-info label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.descricao {
+    font-size: 18px;
+    color: #007BFF;
+    margin-bottom: 5px;
+}
+
+.valor {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.info-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.butao-comparar-carro {
+    display: block;
+    margin: 25px auto 20px;
+    background-color: #0661e1;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, margin 0.3s ease;
+}
+
+
+.butao-comparar-carro:hover {
+    background-color: #0067f8;
+    transform: scale(1.2);
+    cursor: pointer; 
+}
+
+.checkbox {
+    transform: scale(1.5);
+    margin: 10px 0;
+}
+
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .close-btn:hover {
+    color: #1351d8;
+  }
+  
+  .compare-cars {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .car-comparison {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .car-comparison img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .car-spec {
+    margin: 8px 0;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .car-spec strong {
+    color: #1351d8;
+  }
+
+  .cards-carro {
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    .car-comparison {
+        min-width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+.car-spec {
+    margin: 8px 0;
+    font-size: 14px;
+    text-align: left;
+    padding: 12px 15px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #f8f9fa 0%, #f1f3f5 100%);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.car-spec:hover {
+    background: linear-gradient(to right, #f1f3f5 0%, #e9ecef 100%);
+    transform: translateX(5px);
+}
+
+.car-spec::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #1351d8;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.car-spec:hover::before {
+    opacity: 0.6;
+}
+
+.car-spec strong {
+    color: #1351d8;
+    margin-right: 8px;
+}
+
+.car-comparison h3 {
+    min-height: 60px;
+    text-align: left;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+    font-size: 1.1em;
+    border-bottom: 2px solid #1351d833;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.car-comparison {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.car-spec {
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.car-comparison img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto 15px;
+    display: block;
+}

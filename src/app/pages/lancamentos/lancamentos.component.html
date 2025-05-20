@@ -1,0 +1,54 @@
+<main>
+  <div class="video-lancamento">
+    <iframe src="https://www.youtube.com/embed/vQsryuNmsL0" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <h3 class="paragrafo-imagem">
+    O Ford Ranger 2022 combina potência, robustez e tecnologia para enfrentar qualquer desafio. Com um design imponente,
+    motor eficiente e recursos avançados de segurança e conectividade, essa picape é ideal tanto para o trabalho quanto
+    para a aventura.
+  </h3>
+
+  <table class="cards-carro">
+    <tr>
+      <td *ngFor="let car of cars">
+        <div>
+          <img class="cards-carro-imagem" [src]="car.image" [alt]="car.nome">
+          <div class="card-info">
+            <input 
+              class="checkbox" 
+              type="checkbox" 
+              (change)="setCarToCompare($event, car)"
+              [disabled]="carArr.length === 2 && !carArr.includes(car)"
+            >
+            <p class="descricao">{{ car.nome }}</p>
+            <img class="info-icon" src="assets/info.png" alt="Mais informações">
+          </div>
+          <p class="valor">{{ formatPrice(car.preco) }}</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <button class="butao-comparar-carro" (click)="showCompare()">Comparar Carros</button>
+
+  <div id="compare-popup" class="popup-container" *ngIf="showComparePopup">
+    <div class="popup-content">
+        <span class="close-btn" (click)="hideCompare()">&times;</span>
+        <div id="compare-cars-container" class="compare-cars">
+            <div class="car-comparison" *ngFor="let car of carArr">
+                <h3>{{ car.nome }}</h3>
+                <img [src]="car.image" [alt]="car.nome">
+                <div class="car-spec"><strong>Preço:</strong> {{ formatPrice(car.preco) }}</div>
+                <div class="car-spec"><strong>Altura da Caçamba:</strong> {{ car.alturaCacamba }} mm</div>
+                <div class="car-spec"><strong>Altura do Veículo:</strong> {{ car.alturaVeiculo }} mm</div>
+                <div class="car-spec"><strong>Altura do Solo:</strong> {{ car.alturaSolo }} mm</div>
+                <div class="car-spec"><strong>Capacidade de Carga:</strong> {{ car.capacidadeCarga }} kg</div>
+                <div class="car-spec"><strong>Motor:</strong> {{ car.motor }}L</div>
+                <div class="car-spec"><strong>Potência:</strong> {{ car.potencia }} cv</div>
+                <div class="car-spec"><strong>Volume da Caçamba:</strong> {{ car.volumeCacamba }} L</div>
+                <div class="car-spec"><strong>Rodas:</strong> {{ car.roda }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>

@@ -18,4 +18,12 @@ export class MenuComponent {
   goToHome() {
     this.router.navigate(["/home"])
   }
+
+  goToContacts() {
+  this.router.navigate(["/contato"]);
+  }
+
+  goToReleases() {
+    this.router.navigate(["/lancamentos"]);
+  }
 }

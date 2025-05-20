@@ -5,7 +5,7 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="fordMenu" aria-labelledby="fordMenuLabel">
   <div class="offcanvas-header ford-menu-header">
     <div class="d-flex align-items-center">
-      <img class="logoford" src="img/ford.png" alt="Logo Ford">
+      <img class="logoford" src="assets/ford.png" alt="Logo Ford">
       <h5 class="offcanvas-title mb-0" id="fordMenuLabel">Enter</h5>
     </div>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -20,8 +20,15 @@
       <button class="btn btn-menu-item" (click)="goToDashboard()">
         <i class="bi bi-speedometer2 me-2"></i> Dashboard
       </button>
-      
 
+      <button class="btn btn-menu-item" (click)="goToReleases()">
+        <i class="bi bi-calendar-check me-2"></i> Lançamentos
+      </button>      
+      
+      <button class="btn btn-menu-item" (click)="goToContacts()">
+        <i class="bi bi-person-lines-fill me-2"></i> Contato
+      </button>
+      
     </div>
   </div>
 </div>

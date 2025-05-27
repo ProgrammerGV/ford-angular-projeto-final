@@ -1,28 +1,48 @@
 footer {
     background: #1b357e;
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: space-between;
-    text-align: center;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: relative;
     width: 100%;
-    height: 100%;
-    flex-shrink: 0; 
-    bottom: 0;
-    left: 0;
 }
 
 .footer-container {
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: gap 0.3s ease-in-out; 
 }
 
 .footer-copyright {
-    vertical-align: middle;
+    flex-grow: 1;
+    text-align: center;
 }
+
+.copyright {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 90%;
+    display: block;
+}
+
+.logo-ford-footer {
+    display: flex;
+    align-items: center;
+}
+
+.imagem-logo-footer {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
 
 .paragrafo-footer {
     color: white;
@@ -30,37 +50,59 @@ footer {
     font-style: normal;
     font-weight: 200;
     font-size: small;
-    margin: 0 10px 0 5px; 
-    display: flex; 
-    align-items: center; 
-    height: 100%; 
-
+    margin: 0 10px 0 5px;
 }
 
 .redes-sociais-footer {
     width: 24px;
     height: 24px;
-    transition: transform 0.3s ease, margin 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .redes-sociais-footer:hover {
-    transform: scale(1.3); 
-    margin: 0 10px;
+    transform: scale(1.3);
 }
 
-.copyright {
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-size: smaller;
+@media (min-width: 768px) {
+    .copyright {
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+        max-width: 600px;
+    }
+    
+    .imagem-logo-footer {
+        width: 80px;
+    }
 }
 
-.logo-ford-footer {
-    display: flex;
-    margin-right:   0px;
-}
+@media (max-width: 636px) {
+  footer {
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-container {
+    flex-direction: row; 
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .copyright {
+    font-size: 0.75rem;
+  }
+  
+  .logo-ford-footer {
+    margin-top: 10px;
+  }
+  
+  .imagem-logo-footer {
+    width: 50px;
+  }
 
-.imagem-logo-footer {
-    width: 80%;
-    height: 80%;
+  .paragrafo-footer {
+    margin: 5px 0;
+    width: 100%; 
+    margin-bottom: 5px; 
+  }
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
@@ -9,38 +9,34 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent  {
+export class LoginComponent {
   loginService = inject(LoginService)
   router = inject(Router)
-  
 
   loginForm = new FormGroup({
     nome: new FormControl("", [Validators.required]),
-    senha: new FormControl("",[Validators.required])
+    senha: new FormControl("", [Validators.required])
   })
 
   onSubmitLogin() {
-    const {nome, senha} = this.loginForm.value
-    console.log(nome, senha)
-    if(!this.loginForm.valid || !nome || !senha){
+    const { nome, senha } = this.loginForm.value
+
+    if (!this.loginForm.valid || !nome || !senha) {
       alert("Existem campos não preenchidos!")
       return
     }
 
     this.loginService.login(nome, senha).subscribe({
       error: (err) => {
-        if(err.status === 401) {
+        if (err.status === 401) {
           alert("Usuário ou senha incorretos!")
-          return
-        }
-        
+        } else {
           alert("Erro interno! Tente novamente mais tarde...")
-        },
-        
-        next: () => {
-          this.router.navigate(["/home"])
         }
+      },
+      next: () => {
+        this.router.navigate(["/dashboard"]) 
       }
-    )}
-  
-} 
+    })
+  }
+}

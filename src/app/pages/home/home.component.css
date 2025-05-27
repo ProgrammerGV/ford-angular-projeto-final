@@ -137,3 +137,39 @@
   padding: 15px;
   background: #f5f5f5;
 }
+
+@media (max-width: 636px) {
+  .carousel-container {
+    margin-top: 20px;
+    height: 80vh; 
+  }
+
+  .slide-content {
+    padding: 8px;
+  }
+
+  .slide-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .slide-content p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .carousel-control {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .carousel-indicators {
+    bottom: 5px;
+    gap: 6px;
+  }
+
+  .carousel-indicators span {
+    width: 8px;
+    height: 8px;
+  }
+}

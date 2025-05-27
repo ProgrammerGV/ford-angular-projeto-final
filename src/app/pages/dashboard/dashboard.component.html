@@ -2,12 +2,12 @@
 <section class="cardsMenu">
 
     <div class="shadow border border-black p-3">
-    <h2>Veículos</h2>
-    <select style="width: 100%;" (change)="onChangeSelect($event)">
-        @for (v of veiculos; track v.id) {
-            <option value="{{ v.id }}">{{ v.vehicle }}</option>
-        }
-    </select>
+        <h2>Veículos</h2>
+        <select style="width: 100%;" (change)="onChangeSelect($event)">
+            @for (v of veiculos; track v.id) {
+                <option value="{{ v.id }}">{{ v.vehicle }}</option>
+            }
+        </select>
     </div>
 
     <app-card [titulo]="'Total de Vendas'" [valor]="veiculoSelecionado.volumetotal" />
@@ -16,9 +16,12 @@
 </section>
 
 
+
 <section style="display: flex; align-items: center; justify-content: center; padding: 40px;" >
     <img class="selectedVehicle" src="{{ veiculoSelecionado.img }}" alt="">
 </section>
+
+
 <section style="display: flex; justify-content: center;">
     <app-car-table
         [vin]="veiculoSelecionado.vin"

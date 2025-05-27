@@ -11,3 +11,45 @@
   width: 40px;
   transition: width 0.3s ease, box-shadow 0.3s ease;
 }
+
+.desktop-menu {
+    position: relative;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.nav-link {
+    color: #00274C;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer; 
+    user-select: none; 
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 39, 76, 0.1);
+}
+
+.nav-link.active {
+    background-color: #00274C;
+    color: white !important;
+}
+
+.desktop-logo {
+    height: 35px;
+    width: auto;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.d-flex.align-items-center {
+    margin-left: 1rem;
+}
+
+.desktop-logo:hover {
+    transform: scale(1.05);
+}

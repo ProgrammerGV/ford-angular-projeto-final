@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
-  imports: [MenuComponent],
+  imports: [MenuComponent, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

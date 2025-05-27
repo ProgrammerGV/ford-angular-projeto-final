@@ -1,10 +1,11 @@
 .btn-menu {
-  background-color: #00274C;
-  color: white;
+  background-color: transparent !important;  color: white;
+  color: #00274C !important;
   border: none;
-  padding: 8px 15px;
+  padding: 0.1px ;
   border-radius: 4px;
   font-weight: 500;
+  font-size: 1.5rem;
 }
 
 .ford-menu-header {
@@ -36,3 +37,51 @@
   width: auto; 
   margin-right: 10px; 
 }
+
+@media (max-width: 991.98px) {
+  .offcanvas-start {
+    height: 100vh !important;
+  }
+}
+
+.mobile-header-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6vh;
+  background-color: rgb(231, 231, 231);
+  padding: 10px 15px;
+  z-index: 1045;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.mobile-ford-logo {
+  height: 30px;
+  width: auto;
+}
+
+.btn-menu {
+  font-size: 2rem;
+  padding: 0;
+  color: #00274C !important;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+.logout-item {
+  color: #dc3545 !important;
+  margin-top: auto; 
+}
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+

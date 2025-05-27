@@ -269,3 +269,100 @@ iframe {
     margin: 0 auto 15px;
     display: block;
 }
+
+@media (max-width: 768px) {
+    .cards-carro {
+    width: 100% !important;
+    display: table; 
+    width: 95% !important; 
+
+  }
+
+    .cards-carro tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 15px;
+  }
+
+    .cards-carro td {
+    width: 100% !important;
+    max-width: 350px;
+    margin: 0 auto 20px;
+    display: block;
+    padding: 15px;
+  }
+
+
+  .cards-carro-imagem {
+    max-width: 280px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .card-info {
+    justify-content: center;
+  }
+
+  .descricao {
+    font-size: 16px !important;
+  }
+
+  .valor {
+    font-size: 14px !important;
+  }
+
+  .checkbox {
+    transform: scale(1.2);
+    margin: 5px 0;
+  }
+
+  .info-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-carro td {
+    padding: 8px;
+  }
+
+  .paragrafo-imagem {
+    font-size: 0.75rem;
+    padding: 8px;
+    margin: 1rem auto;
+  }
+
+  .butao-comparar-carro {
+    width: 90%;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+    .cards-carro {
+    width: 100% !important;
+    padding: 0 10px;
+  }
+  
+  .cards-carro td {
+    max-width: 100%;
+  }
+
+}
+
+@media (min-width: 769px) { 
+  .cards-carro {
+    border-spacing: 40px !important;
+    width: 80% !important;
+  }
+
+  .cards-carro td {
+    padding: 20px 25px;
+    transition: transform 0.3s ease;
+  }
+
+  .cards-carro td:hover {
+    transform: translateY(-5px);
+  }
+} 

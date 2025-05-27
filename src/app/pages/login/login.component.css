@@ -100,11 +100,44 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 100px;
+    width: 100%; 
+    max-width: 400px; 
+    padding: 0 20px; 
 }
 
 .logoford {
+    width: 100%;
+    height: auto; 
+    max-width: 250px; 
     margin-top: 20px;
-    width: auto ;
-    height: 100px;
 }
 
+@media (max-width: 768px) {
+    .paginaesquerda {
+        display: none; 
+    }
+    
+    .paginadireita {
+        width: 100%; 
+        height: 100vh; 
+    }
+    
+    .caixalogin {
+        margin-bottom: 50px; 
+    }
+    
+    .logobox {
+        margin-bottom: 30px; 
+}
+}
+
+@media (max-width: 480px) {
+    .logoford {
+        max-width: 150px; 
+    }
+    
+    .logobox {
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+}

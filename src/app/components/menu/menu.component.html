@@ -1,12 +1,15 @@
-<button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#fordMenu">
-  <i class="bi bi-list me-1"></i> Menu
-</button>
+<div class="mobile-header-logo d-flex d-lg-none justify-content-between align-items-center w-100 px-3">
+  <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#fordMenu">
+    <i class="bi bi-list"></i>
+  </button>
+  <img class="mobile-ford-logo" src="assets/ford.png" alt="Ford Logo">
+</div>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="fordMenu" aria-labelledby="fordMenuLabel">
+<div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="fordMenu" aria-labelledby="fordMenuLabel" #fordMenuOffcanvas>
   <div class="offcanvas-header ford-menu-header">
     <div class="d-flex align-items-center">
       <img class="logoford" src="assets/ford.png" alt="Logo Ford">
-      <h5 class="offcanvas-title mb-0" id="fordMenuLabel">Enter</h5>
+      <h5 class="offcanvas-title mb-0" id="fordMenuLabel"></h5>
     </div>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
@@ -28,7 +31,10 @@
       <button class="btn btn-menu-item" (click)="goToContacts()">
         <i class="bi bi-person-lines-fill me-2"></i> Contato
       </button>
-      
+
+      <button class="btn btn-menu-item logout-item" (click)="logout()">
+        <i class="bi bi-box-arrow-right me-2"></i> Sair
+      </button>
     </div>
   </div>
 </div>

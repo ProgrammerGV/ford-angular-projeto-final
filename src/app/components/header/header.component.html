@@ -1,5 +1,15 @@
 <div style="display: flex; height: 6vh; background-color: rgb(231, 231, 231); padding: 10px; align-items: center; gap: 10px; justify-content: space-between; border-bottom: solid 1px #00000036;">
+    <div class="d-flex align-items-center gap-2">
+        <img src="assets/ford.png" alt="Ford Logo" class="desktop-logo d-none d-lg-block">
+        <app-menu />
+    </div>
 
-    <app-menu />
-    <button (click)="logout()" class="btn btn-danger">Logout <i class="bi bi-box-arrow-right"></i></button>
+    <div class="desktop-menu d-none d-lg-flex gap-3">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        <a class="nav-link" routerLink="/lancamentos" routerLinkActive="active">Lançamentos</a>
+        <a class="nav-link" routerLink="/contato" routerLinkActive="active">Contatos</a>
+        <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    </div>
+
+    <button (click)="logout()" class="btn btn-danger"> <i class="bi bi-box-arrow-right"></i></button>
 </div>
